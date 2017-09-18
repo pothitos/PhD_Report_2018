@@ -1,10 +1,10 @@
-# Naxos Solver's Description [![Build Status](https://travis-ci.org/pothitos/PhD_Report_2017.svg?branch=master)](https://travis-ci.org/pothitos/PhD_Report_2017)
+# Annual PhD Studies Report 2017 [![Build Status](https://travis-ci.org/pothitos/PhD_Report_2017.svg?branch=master)](https://travis-ci.org/pothitos/PhD_Report_2017)
 
 This repository produces a
 [__PDF__](http://di.uoa.gr/~pothitos/papers/PhD_Report_2017.pdf)
-with [_Naxos Solver_](https://github.com/pothitos/naxos)'s
-description to be included in the XCSP3 2017 Competition
-proceedings.
+with my annual report for the progress of my PhD studies.
+This is requested by my Department of Informatics and
+Telecommunications.
 
 ---
 
