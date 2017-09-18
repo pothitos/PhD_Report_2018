@@ -1,4 +1,4 @@
-# Naxos Solver's Description [![Build Status](https://travis-ci.org/pothitos/naxos-description.svg?branch=master)](https://travis-ci.org/pothitos/naxos-description)
+# Naxos Solver's Description [![Build Status](https://travis-ci.org/pothitos/PhD_Report_2017.svg?branch=master)](https://travis-ci.org/pothitos/PhD_Report_2017)
 
 This repository produces a
 [__PDF__](http://di.uoa.gr/~pothitos/papers/PhD_Report_2017.pdf)
