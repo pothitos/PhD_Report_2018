@@ -1,5 +1,5 @@
 # This is used by Travis CI site in order
-# to produce a PDF file out of LaTeX.
+# to produce a PDF file out of LuaLaTeX.
 
 addons:
   apt:
@@ -7,8 +7,18 @@ addons:
       - texlive-full
 
 script:
-  - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode"
-    PhD_Report_2018.tex
+  # Create temporary directory
+  - mkdir hyphenation
+  - cd hyphenation
+  # Concatenate English and Greek hyphenation rules
+  - cat /usr/share/texlive/texmf-dist/tex/generic/hyphen/hyphen.tex
+    /usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-monoton.tex
+    > dumyhyph.tex
+  # Install joined hyphenation rules
+  - mktexfmt lualatex.fmt
+  - cd -
+  # Produce PDF
+  - lualatex -interaction=nonstopmode PhD_Report_2018.tex
 
 after_success:
   # Decrypt private key for accessing web server
