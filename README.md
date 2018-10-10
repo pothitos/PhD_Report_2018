@@ -4,7 +4,8 @@ This repository produces a
 [__PDF__](http://di.uoa.gr/~pothitos/papers/PhD_Report_2018.pdf)
 with my annual report for the progress of my PhD studies.
 This is requested by my Department of Informatics and
-Telecommunications.
+Telecommunications according to a
+[template](http://www.di.uoa.gr/sites/default/files/YPOMNHMA_ETHSIAS_PROODOY_YPOPSIFIOY_DIDAKTORA.docx).
 
 ---
 
