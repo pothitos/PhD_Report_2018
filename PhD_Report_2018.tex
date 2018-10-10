@@ -50,6 +50,79 @@
 δημοσιεύσεις και οτιδήποτε άλλο μπορεί να χαρακτηρίσει την
 πρόοδό του.
 
+Κατά το ακαδημαϊκό έτος 2017–2018 δημοσιεύσαμε στον
+27\textsuperscript{ο} τόμο του περιοδικού IJAIT μία
+επέκταση~\cite{Pothitos2018} της εργασίας που παρουσιάσαμε
+στο συνέδριο SETN 2016~\cite{Pothitos2016-PoPS}. Ακολουθεί
+μία σύντομη εισαγωγή στο άρθρο~\cite{Pothitos2018} στα
+Αγγλικά.
+
+In the late 1990s, \emph{Constrained Programming} (CP)
+promised to separate the declaration of a problem from the
+process to solve it. This work attempts to serve this
+direction, by implementing and presenting a modular way to
+define \emph{search methods} that seek solutions to
+arbitrary \emph{Constraint Satisfaction Problems} (CSPs).
+The user just declares their CSP, and it can be solved using
+a portfolio of search methods already in place. Apart from
+the pluggable search methods framework for any CSP, we also
+introduce pluggable \emph{heuristics} for our search
+methods. We found an efficient stochastic heuristics'
+paradigm that smoothly combines randomness with normal
+heuristics. We consider a factor of \emph{disobedience} to
+normal heuristics, and we fine-tune it each time, according
+to our estimation of normal heuristics' reliability
+(confidence). We prove mathematically that while the
+disobedience factor decreases, the stochastic heuristics
+approximate deterministic normal heuristics. Our algebraic
+evidence is supported by empirical evaluations on real life
+problems: A new search method, namely \textsc{PoPS}, that
+exploits this heuristics' paradigm, can outperform regular
+well-known constructive search methods.
+
+The initial contribution of this work is the provision of an
+interface that everyone can use to define their search
+methods. Apart from easing the declaration of custom search
+methods, we elaborated on the algorithm behind the scenes
+supporting our interface in an open source solver.
+
+In this work, we go one step further and allow the
+user\slash programmer to state their own \emph{search
+methods} that can apply to any CSP. We found a framework
+where the user can compose their search methods out of
+conjunctive and disjunctive goals.
+
+We also presented a well-founded paradigm to exploit both
+stochastic and deterministic heuristics. Empirical
+evaluations showed that our hybrid approach can produce
+better results than fully random or fully deterministic
+methodologies.
+
+In order to achieve this, we approached and used heuristics
+as a \emph{confidence} and \emph{reliability} measure. By
+exploiting these heuristic semantics, we were able to
+produce a new efficient search method, namely \textsc{PoPS},
+that can outperform other methodologies. In general, our
+proposed framework gives the opportunity to exploit ``on the
+fly'' whichever heuristic confidence fluctuations occur.
+
+In summary, the contributions of the paper are
+\begin{itemize}
+  \item the foundation of a modular \emph{search methods
+        framework} for Constraint Programming,
+  \item the introduction of a \emph{confidence} factor into
+        regular heuristics and their gradual randomization
+        when we aren't confident about them, in order to
+        make them more flexible, and finally
+  \item the implementation of an efficient \emph{new search
+        method} \textsc{PoPS} that exploits heuristics as
+        values\slash evaluations---as they are---and not
+        simply as ranks of possible choices.
+\end{itemize}
+
+\bibliographystyle{alpha}
+\bibliography{bibliography}
+
 \begin{center}
   Αθήνα, 11/10/2018
 
