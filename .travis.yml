@@ -3,8 +3,12 @@
 
 addons:
   apt:
-    packages:
-      - texlive-full
+    sources:
+      - sourceline: 'ppa:jonathonf/texlive'
+
+before_install:
+  - sudo apt-get update
+  - travis_wait 70 sudo apt-get install -y texlive-full
 
 script:
   # Create temporary directory
