@@ -22,7 +22,7 @@ script:
   - mktexfmt lualatex.fmt
   - cd -
   # Produce PDF
-  - lualatex -interaction=nonstopmode PhD_Report_2018.tex
+  - latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" PhD_Report_2018.tex
 
 after_success:
   # Decrypt private key for accessing web server
