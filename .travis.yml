@@ -3,26 +3,31 @@
 
 addons:
   apt:
-    sources:
-      - sourceline: 'ppa:jonathonf/texlive'
+    packages:
+      - docker-ce
 
 before_install:
-  - sudo apt-get update
-  - travis_wait 70 sudo apt-get install -y texlive-full
+  - docker run --rm -d -it -v $(pwd):/tmp -w /tmp --name alpine_texlive alpine
+  - docker exec alpine_texlive apk add --update texlive-full > log.txt
+  - grep -m 1 "LuaTeX, Version" log.txt && tail -1 log.txt && rm log.txt
 
 script:
   # Create temporary directory
   - mkdir hyphenation
-  - cd hyphenation
   # Concatenate English and Greek hyphenation rules
-  - cat /usr/share/texlive/texmf-dist/tex/generic/hyphen/hyphen.tex
-    /usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-monoton.tex
-    > dumyhyph.tex
+  - docker exec alpine_texlive
+    cat /usr/share/texmf-dist/tex/generic/hyphen/hyphen.tex
+    /usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-monoton.tex
+    > hyphenation/dumyhyph.tex
   # Install joined hyphenation rules
-  - mktexfmt lualatex.fmt
-  - cd -
+  - docker exec -w /tmp/hyphenation alpine_texlive
+    mktexfmt lualatex.fmt
+  # Install LuaLaTeX
+  - docker exec -w /usr/bin alpine_texlive
+    ln -s luatex lualatex
   # Produce PDF
-  - latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" PhD_Report_2018.tex
+  - docker exec alpine_texlive
+    latexmk -lualatex PhD_Report_2018.tex
 
 after_success:
   # Decrypt private key for accessing web server
