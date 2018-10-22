@@ -95,25 +95,23 @@ exploits this heuristics' paradigm, can outperform regular
 well-known constructive search methods.
 
 The initial contribution of this work is the provision of an
-interface that everyone can use to define their search
-methods. Apart from easing the declaration of custom search
-methods, we elaborated on the algorithm behind the scenes
-supporting our interface in an open source solver.
-
-In this work, we go one step further and allow the
-user\slash programmer to state their own \emph{search
-methods} that can apply to any CSP. We found a framework
+interface that everyone can use to define their own search
+methods that can apply to any CSP. We found a framework
 where the user can compose their search methods out of
 conjunctive and disjunctive goals.
 
-We also presented a well-founded paradigm to exploit both
+Apart from easing the declaration of custom search methods,
+we elaborated on the algorithm behind the scenes supporting
+our interface in an open source solver.
+
+We also present a well-founded paradigm to exploit both
 stochastic and deterministic heuristics. Empirical
-evaluations showed that our hybrid approach can produce
-better results than fully random or fully deterministic
+evaluations show that our hybrid approach can produce better
+results than fully random or fully deterministic
 methodologies.
 
-In order to achieve this, we approached and used heuristics
-as a \emph{confidence} and \emph{reliability} measure. By
+In order to achieve this, we approach and use heuristics as
+a \emph{confidence} and \emph{reliability} measure. By
 exploiting these heuristic semantics, we were able to
 produce a new efficient search method, namely \textsc{PoPS},
 that can outperform other methodologies. In general, our
